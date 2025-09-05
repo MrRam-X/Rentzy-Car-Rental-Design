@@ -30,8 +30,7 @@
               "brand-gray": "#666666",
             },
             backgroundImage: {
-              "hero-pattern":
-                "url('./assets/images/HeroSection.jpg')",
+              "hero-pattern": "url('./assets/images/HeroSection.jpg')",
             },
           },
         },
@@ -60,6 +59,7 @@
         /* gray-200 */
       }
     </style>
+    <link rel="stylesheet" href="./assets/css/custom.css" />
   </head>
 
   <body class="bg-white">
@@ -194,7 +194,9 @@
         class="relative h-screen w-full bg-hero-pattern bg-cover bg-center flex items-center"
       >
         <div class="absolute inset-0 bg-black/60"></div>
-        <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 text-white max-w-6xl">
+        <div
+          class="relative container mx-auto px-4 sm:px-6 lg:px-8 text-white max-w-6xl"
+        >
           <div class="max-w-2xl">
             <p
               class="text-brand-gold font-semibold tracking-widest uppercase mb-4"
@@ -273,7 +275,9 @@
 
       <!-- About Us Section -->
       <section class="py-12 px-6 md:px-12 lg:px-20 flex justify-center">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-6xl">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-6xl"
+        >
           <!-- Left Content -->
           <div class="text-center md:text-left">
             <p class="uppercase text-xs tracking-widest text-yellow-600 mb-2">
@@ -630,110 +634,179 @@
           </div>
         </div>
       </section>
+
+      <!-- Rental Filter/Search Section -->
+      <section
+        class="parallax h-auto py-24 sm:h-[500px] flex flex-col justify-center items-center text-center relative"
+      >
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+
+        <div class="relative z-10 w-full px-4">
+          <!-- Title -->
+          <p class="text-yellow-400 tracking-widest uppercase text-sm">
+            Rent Now
+          </p>
+          <h1 class="text-white text-4xl font-bold mb-8">Book Auto Rental</h1>
+          <div
+            class="bg-white rounded-2xl lg:rounded-full shadow-lg flex flex-col lg:flex-row items-center p-2 max-w-6xl mx-auto"
+          >
+            <div
+              class="w-full flex flex-wrap lg:flex-nowrap items-center text-xs"
+            >
+              <!-- Car Type -->
+              <div class="w-full md:w-1/2 lg:flex-1 p-2">
+                <div class="relative w-full">
+                  <select
+                    class="w-full bg-transparent outline-none py-3 pl-4 pr-10 appearance-none lg:border-r border-gray-200"
+                  >
+                    <option>Choose Car Type</option>
+                    <option>SUV</option>
+                    <option>Sedan</option>
+                    <option>Hatchback</option>
+                  </select>
+                  <div
+                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4"
+                  >
+                    <svg
+                      class="fill-current h-4 w-4 text-gray-500"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pick Up Location -->
+              <div class="w-full md:w-1/2 lg:flex-1 p-2">
+                <div class="relative w-full">
+                  <select
+                    class="w-full bg-transparent outline-none py-3 pl-4 pr-10 appearance-none lg:border-r border-gray-200"
+                  >
+                    <option>Pick Up Location</option>
+                    <option>Airport</option>
+                    <option>City Center</option>
+                    <option>Hotel</option>
+                  </select>
+                  <div
+                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4"
+                  >
+                    <svg
+                      class="fill-current h-4 w-4 text-gray-500"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pick Up Date -->
+              <div class="w-full md:w-1/2 lg:flex-1 p-2">
+                <div class="relative w-full">
+                  <input
+                    type="text"
+                    class="w-full bg-transparent outline-none py-3 pl-4 pr-10 lg:border-r border-gray-200"
+                    placeholder="Pick Up Date"
+                  />
+                  <div
+                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4"
+                  >
+                    <svg
+                      class="h-5 w-5 text-gray-500"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Drop Off Location -->
+              <div class="w-full md:w-1/2 lg:flex-1 p-2">
+                <div class="relative w-full">
+                  <select
+                    class="w-full bg-transparent outline-none py-3 pl-4 pr-10 appearance-none lg:border-r border-gray-200"
+                  >
+                    <option>Drop Off Location</option>
+                    <option>Airport</option>
+                    <option>City Center</option>
+                    <option>Hotel</option>
+                  </select>
+                  <div
+                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4"
+                  >
+                    <svg
+                      class="fill-current h-4 w-4 text-gray-500"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Return Date -->
+              <div class="w-full md:w-1/2 lg:flex-1 p-2">
+                <div class="relative w-full">
+                  <input
+                    type="text"
+                    class="w-full bg-transparent outline-none py-3 pl-4 pr-10 lg:border-r border-gray-200"
+                    placeholder="Drop Off Date"
+                  />
+                  <div
+                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4"
+                  >
+                    <svg
+                      class="h-5 w-5 text-gray-500"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Button -->
+            <div class="w-full lg:w-auto p-2 text-xs">
+              <button
+                class="w-full lg:w-[150px] lg:p-[24px] bg-yellow-500 text-black px-10 py-4 rounded-full hover:bg-black hover:text-yellow-500 transition-colors duration-500"
+              >
+                Rent Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const header = document.getElementById("header");
-        const menuBtn = document.getElementById("menu-btn");
-        const closeBtn = document.getElementById("close-btn");
-        const mobileMenu = document.getElementById("mobile-menu");
-
-        // Sticky header functionality
-        window.addEventListener("scroll", () => {
-          if (window.scrollY > 50) {
-            header.classList.add("header-scrolled");
-          } else {
-            header.classList.remove("header-scrolled");
-          }
-        });
-
-        // Mobile menu toggle functionality
-        menuBtn.addEventListener("click", () => {
-          mobileMenu.classList.remove("hidden");
-        });
-
-        closeBtn.addEventListener("click", () => {
-          mobileMenu.classList.add("hidden");
-        });
-
-        const track = document.getElementById("carousel-track");
-        const prevBtn = document.getElementById("prev-btn");
-        const nextBtn = document.getElementById("next-btn");
-        const indicatorContainer = document.getElementById(
-          "indicator-container"
-        );
-        const dots = Array.from(indicatorContainer.children);
-
-        let currentIndex = 0;
-        const totalSlides = track.children.length;
-
-        function updateCarousel() {
-          // Determine how many slides to show at once based on screen size
-          const isDesktop = window.innerWidth >= 1024;
-          const slidesPerPage = isDesktop ? 3 : 1;
-          const totalPages = Math.ceil(totalSlides / slidesPerPage);
-
-          // --- BUG FIX IS HERE ---
-          // The offset calculation now correctly moves the track by a full page width.
-          // On desktop, a "page" is 3 slides (100% of the viewport).
-          // On mobile, a "page" is 1 slide (100% of the viewport).
-          const offset = -currentIndex * 100;
-          track.style.transform = `translateX(${offset}%)`;
-
-          // Update indicator dots for desktop view
-          if (isDesktop) {
-            dots.forEach((dot, index) => {
-              dot.classList.toggle("bg-brand-gold", index === currentIndex);
-              dot.classList.toggle("bg-gray-200", index !== currentIndex);
-            });
-          }
-
-          // Hide/Show mobile navigation buttons if at start/end
-          if (!isDesktop) {
-            prevBtn.style.display = currentIndex === 0 ? "none" : "block";
-            nextBtn.style.display =
-              currentIndex === totalPages - 1 ? "none" : "block";
-          }
-        }
-
-        // --- LOGIC FOR BUTTONS AND DOTS ---
-        // Event Listeners for Mobile/Tablet Arrows
-        nextBtn.addEventListener("click", () => {
-          const slidesPerPage = window.innerWidth >= 1024 ? 3 : 1;
-          const totalPages = Math.ceil(totalSlides / slidesPerPage);
-          if (currentIndex < totalPages - 1) {
-            currentIndex++;
-            updateCarousel();
-          }
-        });
-
-        prevBtn.addEventListener("click", () => {
-          if (currentIndex > 0) {
-            currentIndex--;
-            updateCarousel();
-          }
-        });
-
-        // Event Listeners for Desktop Dots
-        indicatorContainer.addEventListener("click", (e) => {
-          const targetDot = e.target.closest("button");
-          if (!targetDot) return;
-
-          const targetIndex = parseInt(targetDot.dataset.page);
-          currentIndex = targetIndex;
-          updateCarousel();
-        });
-
-        // Reset and update carousel on window resize
-        window.addEventListener("resize", () => {
-          currentIndex = 0; // Reset to the first page on resize
-          updateCarousel();
-        });
-
-        // Initial setup
-        updateCarousel();
-      });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
