@@ -364,5 +364,163 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Initial load
     showInitialCars();
+
+    // =================================================================
+    // SECTION 5: RENTAL CAR TYPES CAROUSEL (Fully Corrected Script)
+    // =================================================================
+    const carTypesSection = document.getElementById("car-types-section");
+    if (carTypesSection) {
+      const carTypesData = [
+        {
+          title: "Luxury Cars",
+          image:
+            "https://images.pexels.com/photos/3766111/pexels-photo-3766111.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        },
+        {
+          title: "Sport Cars",
+          image:
+            "https://images.pexels.com/photos/17096537/pexels-photo-17096537/free-photo-of-bugatti-mistral-in-the-desert.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        },
+        {
+          title: "SUV",
+          image:
+            "https://images.pexels.com/photos/15942431/pexels-photo-15942431/free-photo-of-a-silver-bentley-parked-in-the-desert.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        },
+        {
+          title: "Sedans",
+          image:
+            "https://images.pexels.com/photos/112460/pexels-photo-112460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        },
+        {
+          title: "Convertibles",
+          image:
+            "https://images.pexels.com/photos/1637859/pexels-photo-1637859.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        },
+        {
+          title: "Electric",
+          image:
+            "https://images.pexels.com/photos/9735310/pexels-photo-9735310.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        },
+      ];
+
+      const track = document.getElementById("types-carousel-track");
+      const indicatorContainer = document.getElementById(
+        "types-indicator-container"
+      );
+      const prevBtn = document.getElementById("types-prev-btn");
+      const nextBtn = document.getElementById("types-next-btn");
+
+      // Use a single index for the current *slide* for consistency
+      let currentSlideIndex = 0;
+
+      // Populate the carousel track
+      carTypesData.forEach((category) => {
+        const slide = document.createElement("div");
+        // The width classes here are what control the number of visible slides
+        slide.className = "slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4";
+        slide.innerHTML = `
+            <a
+              href="#"
+              class="group relative block rounded-3xl overflow-hidden shadow-lg h-96"
+            >
+              <img
+                src="${category.image}"
+                alt="${category.title}"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div class="absolute inset-0 bg-black/30"></div>
+              <div class="relative h-full flex flex-col justify-between p-6">
+                <h3 class="text-center text-white text-2xl font-bold">${category.title}</h3>
+                <div
+                  class="w-12 h-12 bg-brand-gold rounded-full flex items-center justify-center group-hover:bg-brand-dark group-hover:text-brand-gold transition-colors duration-300"
+                >
+                  <svg
+                    class="w-6 h-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="1"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M7 17L17 7M17 12L17 7L12 7"
+                    />
+                  </svg>
+                </div>
+              </div> </a
+            >`;
+
+        track.appendChild(slide);
+      });
+
+      const allSlides = Array.from(track.children);
+      const totalSlides = allSlides.length;
+
+      function updateCarouselState() {
+        const slidesPerPage =
+          window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+        const totalPages = Math.ceil(totalSlides / slidesPerPage);
+
+        // Calculate the carousel's new position
+        const slideWidthPercentage = 100 / slidesPerPage;
+        const offset = -currentSlideIndex * slideWidthPercentage;
+        track.style.transform = `translateX(${offset}%)`;
+
+        // Update dot indicators for desktop
+        indicatorContainer.innerHTML = "";
+        if (window.innerWidth >= 1024) {
+          for (let i = 0; i < totalPages; i++) {
+            const button = document.createElement("button");
+            button.className = `indicator-dot w-3 h-3 rounded-full transition-colors ${
+              i * slidesPerPage === currentSlideIndex
+                ? "bg-brand-gold"
+                : "bg-gray-200"
+            }`;
+            button.dataset.index = i * slidesPerPage;
+            indicatorContainer.appendChild(button);
+          }
+        }
+
+        // Update arrow visibility for mobile/tablet
+        if (window.innerWidth < 1024) {
+          prevBtn.style.display = currentSlideIndex === 0 ? "none" : "flex";
+          nextBtn.style.display =
+            currentSlideIndex >= totalSlides - slidesPerPage ? "none" : "flex";
+        }
+      }
+
+      // Event Listeners
+      nextBtn.addEventListener("click", () => {
+        const slidesPerPage = window.innerWidth >= 768 ? 2 : 1;
+        if (currentSlideIndex < totalSlides - slidesPerPage) {
+          currentSlideIndex++;
+          updateCarouselState();
+        }
+      });
+
+      prevBtn.addEventListener("click", () => {
+        if (currentSlideIndex > 0) {
+          currentSlideIndex--;
+          updateCarouselState();
+        }
+      });
+
+      indicatorContainer.addEventListener("click", (e) => {
+        const targetDot = e.target.closest("button");
+        if (!targetDot) return;
+        currentSlideIndex = parseInt(targetDot.dataset.index);
+        updateCarouselState();
+      });
+
+      window.addEventListener("resize", () => {
+        currentSlideIndex = 0; // Reset position on resize
+        updateCarouselState();
+      });
+
+      // Initial Setup
+      updateCarouselState();
+    }
   }
 });
