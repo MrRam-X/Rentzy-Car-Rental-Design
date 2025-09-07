@@ -347,7 +347,7 @@
             <!-- Button -->
             <a
               href="#"
-              class="inline-flex items-center px-6 py-3 bg-yellow-500 text-black font-medium rounded-full shadow hover:bg-yellow-600 transition"
+              class="inline-flex items-center px-6 py-3 bg-yellow-500 text-black hover:bg-black hover:text-yellow-500 transition-colors duration-500 font-medium rounded-full shadow"
             >
               Read More
               <svg
@@ -383,12 +383,10 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
           <!-- Section Header -->
           <div class="text-center max-w-2xl mx-auto mb-12">
-            <p
-              class="text-brand-gold font-semibold tracking-widest uppercase mb-2"
-            >
+            <p class="text-brand-gold tracking-[0.3em] uppercase text-sm mb-2">
               WHAT WE DO
             </p>
-            <h2 class="text-3xl sm:text-4xl font-bold text-brand-dark">
+            <h2 class="text-4xl font-bold text-brand-dark">
               Our <span class="text-brand-gold">Services</span>
             </h2>
           </div>
@@ -644,7 +642,7 @@
 
         <div class="relative z-10 w-full px-4">
           <!-- Title -->
-          <p class="text-yellow-400 tracking-widest uppercase text-sm">
+          <p class="text-brand-gold tracking-[0.3em] uppercase text-sm mb-2">
             Rent Now
           </p>
           <h1 class="text-white text-4xl font-bold mb-8">Book Auto Rental</h1>
@@ -802,6 +800,70 @@
                 Rent Now
               </button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LUXURY CAR FLEET SECTION -->
+      <section id="car-fleet-grid" class="py-24 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+          <!-- Section Header -->
+          <div class="text-center mb-12">
+            <p class="text-brand-gold tracking-[0.3em] uppercase text-sm mb-2">
+              SELECT YOUR CAR
+            </p>
+            <h2 class="text-4xl font-bold text-brand-dark">
+              Luxury <span class="text-brand-gold">Car Fleet</span>
+            </h2>
+          </div>
+
+          <!-- Filter Tabs -->
+          <nav
+            id="fleet-filters"
+            class="flex justify-center flex-wrap gap-2 sm:gap-4 mb-12"
+          >
+            <button
+              data-filter="all"
+              class="filter-btn bg-brand-dark text-white font-semibold py-2 px-6 rounded-full transition-colors duration-300"
+            >
+              All
+            </button>
+            <button
+              data-filter="suv"
+              class="filter-btn bg-gray-100 text-brand-dark font-semibold py-2 px-6 rounded-full transition-colors duration-300 hover:bg-gray-200"
+            >
+              SUVs
+            </button>
+            <button
+              data-filter="sports"
+              class="filter-btn bg-gray-100 text-brand-dark font-semibold py-2 px-6 rounded-full transition-colors duration-300 hover:bg-gray-200"
+            >
+              Sports
+            </button>
+            <button
+              data-filter="sedan"
+              class="filter-btn bg-gray-100 text-brand-dark font-semibold py-2 px-6 rounded-full transition-colors duration-300 hover:bg-gray-200"
+            >
+              Sedans
+            </button>
+          </nav>
+
+          <!-- Cars Grid -->
+          <div
+            id="fleet-grid-container"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            <!-- Car cards will be injected here by JavaScript -->
+          </div>
+
+          <!-- Load More Button -->
+          <div id="load-more-container" class="text-center mt-16">
+            <button
+              id="load-more-btn"
+              class="bg-brand-dark text-white font-semibold py-3 px-8 rounded-full hover:bg-black transition-colors duration-300"
+            >
+              Load More
+            </button>
           </div>
         </div>
       </section>
