@@ -1,31 +1,15 @@
-/* Parallax Background */
-    .parallax {
-      background-image: url('../images/HeroSection.jpg'); /* Replace with your image */
-      background-attachment: fixed;
-      background-size: cover;
-      background-position: center;
-    }
+/* Parallax Background Car Rental */
+.parallax-rental {
+  background-image: url("../images/HeroSection.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
 
-    /* Custom Flatpickr Styling */
-    .flatpickr-calendar {
-      font-family: 'Inter', sans-serif;
-      border-radius: 8px;
-      border: none;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    }
-    .flatpickr-months {
-      background-color: #fbbf24; /* yellow-400 */
-      color: white;
-      border-radius: 8px 8px 0 0;
-    }
-    .flatpickr-day.selected {
-      background: #fbbf24 !important;
-      border-color: #fbbf24 !important;
-      color: white;
-    }
-    .flatpickr-day.today {
-      border: 1px solid #fbbf24;
-    }
-    .flatpickr-day:hover {
-      background: #fde68a !important; /* yellow-200 hover */
-    }
+/* Parallax Background Interested Renting Car */
+.parallax-interested-renting-car {
+  background-image: url("../images/HeroSection.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
