@@ -32,7 +32,7 @@
             backgroundImage: {
               // Using a similar but distinct image for the about page hero
               "about-hero-pattern":
-                "url('https://images.pexels.com/photos/2127733/pexels-photo-2127733.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
+                "url('./assets/images/HeroSection.jpg')",
             },
           },
         },
@@ -64,46 +64,49 @@
   </head>
 
   <body class="bg-white">
-    <!-- HEADER (Same as index.html) -->
+    <!-- HEADER -->
     <header
       id="header"
       class="fixed top-0 left-0 w-full z-50 transition-all duration-300"
     >
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         <div class="flex justify-between items-center h-20">
+          <!-- Logo -->
           <a
-            href="./index.html"
+            href="index.html"
             class="text-3xl font-bold text-white logo-text transition-colors duration-300"
           >
             RENT<span class="text-brand-gold">ZY</span>
           </a>
+
+          <!-- Desktop Navigation -->
           <nav class="hidden lg:flex items-center space-x-8">
-            <a
-              href="./index.html"
-              class="text-white hover:text-brand-gold transition-colors nav-link duration-300"
+            <a href="index.html" class="text-white hover:text-brand-gold transition-colors nav-link duration-300"
               >Home</a
             >
             <a
-              href="./about.html"
+              href="about.html"
               class="text-brand-gold font-semibold nav-link"
               >About</a
             >
             <a
-              href="#"
+              href="services.html"
               class="text-white hover:text-brand-gold transition-colors nav-link duration-300"
               >Services</a
             >
             <a
-              href="#"
+              href="cars.html"
               class="text-white hover:text-brand-gold transition-colors nav-link duration-300"
               >Cars</a
             >
             <a
-              href="#"
+              href="contact.html"
               class="text-white hover:text-brand-gold transition-colors nav-link duration-300"
               >Contact</a
             >
           </nav>
+
+          <!-- Contact Info -->
           <div class="hidden lg:flex items-center space-x-4">
             <div
               class="w-12 h-12 border-2 border-gray-500 rounded-full flex items-center justify-center contact-icon-wrapper transition-colors duration-300"
@@ -128,6 +131,8 @@
               <p class="font-semibold">855 100 4444</p>
             </div>
           </div>
+
+          <!-- Mobile Menu Button -->
           <button
             id="menu-btn"
             class="lg:hidden text-white mobile-btn focus:outline-none transition-colors duration-300"
@@ -151,7 +156,7 @@
       </div>
     </header>
 
-    <!-- MOBILE MENU (Same as index.html) -->
+    <!-- MOBILE MENU -->
     <div
       id="mobile-menu"
       class="hidden lg:hidden fixed top-0 left-0 w-full h-screen bg-brand-dark z-50"
@@ -177,13 +182,19 @@
       <nav
         class="flex flex-col items-center justify-center h-full -mt-20 space-y-6 text-2xl text-white"
       >
-        <a href="./index.html" class="hover:text-brand-gold transition-colors"
-          >Home</a
+        <a href="index.html" class="hover:text-brand-gold transition-colors">Home</a>
+        <a href="about.html" class="text-brand-gold font-semibold"
+          >About</a
         >
-        <a href="./about.html" class="text-brand-gold font-semibold">About</a>
-        <a href="#" class="hover:text-brand-gold transition-colors">Services</a>
-        <a href="#" class="hover:text-brand-gold transition-colors">Cars</a>
-        <a href="#" class="hover:text-brand-gold transition-colors">Contact</a>
+        <a href="services.html" class="hover:text-brand-gold transition-colors"
+          >Services</a
+        >
+        <a href="cars.html" class="hover:text-brand-gold transition-colors"
+          >Cars</a
+        >
+        <a href="contact.html" class="hover:text-brand-gold transition-colors"
+          >Contact</a
+        >
       </nav>
     </div>
 
@@ -191,7 +202,7 @@
     <main>
       <!-- ABOUT US HERO SECTION -->
       <section
-        class="relative h-[50vh] min-h-[300px] w-full bg-about-hero-pattern bg-cover bg-center flex items-center justify-center text-center"
+        class="relative h-[70vh] min-h-[300px] w-full bg-about-hero-pattern bg-cover bg-center flex items-center justify-center text-center"
       >
         <div class="absolute inset-0 bg-black/60"></div>
         <div class="relative text-white px-4">
@@ -540,8 +551,7 @@
                 >
                   <path
                     d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zM232.615 354.708V157.292l157.154 98.708-157.154 98.708z"
-                  /></svg
-              ></a>
+                  /></svg></a>
             </div>
           </div>
           <div class="col-span-3 lg:col-start-6">
