@@ -13,3 +13,33 @@
   background-size: cover;
   background-position: center;
 }
+/* Custom radio and checkbox styling */
+.custom-radio-button,
+.custom-checkbox-button {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #e5e7eb; /* gray-200 */
+  border-radius: 9999px; /* rounded-full */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, border-color 0.2s;
+  flex-shrink: 0;
+}
+.custom-checkbox-button {
+  border-radius: 0.25rem; /* rounded-md */
+}
+/* Style for when the hidden input is checked */
+.custom-radio input:checked ~ .custom-radio-button,
+.custom-checkbox input:checked ~ .custom-checkbox-button {
+  background-color: #e1a257; /* brand-gold */
+  border-color: #e1a257; /* brand-gold */
+}
+/* Tick mark for checked state */
+.custom-radio input:checked ~ .custom-radio-button::after,
+.custom-checkbox input:checked ~ .custom-checkbox-button::after {
+  content: "✓";
+  color: black;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
