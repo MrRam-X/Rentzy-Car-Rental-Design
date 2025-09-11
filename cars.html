@@ -17,7 +17,7 @@
         theme: {
           extend: {
             fontFamily: { poppins: ["Poppins", "sans-serif"] },
-            colors: { "brand-gold": "#E1A257", "brand-dark": "#121212" },
+            colors: { "brand-gold": "#f5b754", "brand-dark": "#121212" },
           },
         },
       };
@@ -201,7 +201,7 @@
 
       <!-- MAIN CONTENT: FILTERS & CAR GRID -->
       <!-- MODIFICATION: Reduced top padding from py-32 to py-24 for better flow -->
-      <section class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <section class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 max-w-6xl">
         <div class="grid grid-cols-1 lg:grid-cols-4 lg:gap-8">
           <!-- FILTERS: Sidebar for Desktop, Drawer for Mobile/Tablet -->
           <aside
@@ -426,6 +426,24 @@
                         >Doors</span
                       >
                       <span class="font-semibold text-brand-dark">4</span>
+                    </li>
+                    <li class="flex justify-between items-center">
+                      <span class="flex items-center gap-2 text-gray-600"
+                        >Seats</span
+                      >
+                      <span class="font-semibold text-brand-dark">5</span>
+                    </li>
+                    <li class="flex justify-between items-center">
+                      <span class="flex items-center gap-2 text-gray-600"
+                        >Transmission</span
+                      >
+                      <span class="font-semibold text-brand-dark">Manual</span>
+                    </li>
+                    <li class="flex justify-between items-center">
+                      <span class="flex items-center gap-2 text-gray-600"
+                        >Luggage</span
+                      >
+                      <span class="font-semibold text-brand-dark">2 Trolley Bags</span>
                     </li>
                   </ul>
                   <div class="flex justify-between items-center mt-6">
