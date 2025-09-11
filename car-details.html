@@ -63,6 +63,12 @@
         border-color: #e5e7eb;
         /* gray-200 */
       }
+
+      /* Style for the active thumbnail in the gallery */
+      .active-thumbnail {
+        border-color: #e1a257; /* brand-gold */
+        opacity: 1 !important;
+      }
     </style>
     <link rel="stylesheet" href="./assets/css/custom.css" />
   </head>
@@ -413,9 +419,7 @@
                           </div>
                           Luggage</span
                         >
-                        <span
-                          >2 Bags</span
-                        >
+                        <span>2 Bags</span>
                       </li>
                       <li
                         class="flex justify-between items-center text-gray-700 text-lg font-light"
@@ -471,9 +475,7 @@
 
                     <!-- Split Button -->
                     <div class="mt-8">
-                      <div
-                        class="flex items-center text-lg"
-                      >
+                      <div class="flex items-center text-lg">
                         <a
                           href="#"
                           class="bg-brand-gold w-2/5 text-center text-black py-4 rounded-l-full hover:bg-brand-dark hover:text-white transition-colors"
@@ -506,7 +508,29 @@
         </div>
       </section>
 
-      
+      <!-- =================================================================
+      REDESIGNED SECTION: IMAGE GALLERY V2 (with Lightbox Modal)
+      ================================================================= -->
+      <section id="gallery-v2" class="pb-16 sm:pb-24">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+          <div class="text-center mb-12 lg:mt-12">
+            <p class="text-brand-gold tracking-[0.3em] uppercase text-sm mb-2">
+              View Car's
+            </p>
+            <h2 class="text-4xl font-bold text-brand-dark">
+              Image <span class="text-brand-gold">Gallery</span>
+            </h2>
+          </div>
+          <!-- Thumbnail Grid -->
+          <div
+            id="thumbnail-grid"
+            class="grid grid-cols-1 lg:grid-cols-3 gap-6"
+          >
+            <!-- Thumbnails will be populated here by JavaScript -->
+          </div>
+        </div>
+      </section>
     </main>
     <!-- =================================================================
     SECTION: FOOTER
@@ -772,6 +796,84 @@
         </div>
       </div>
     </footer>
+    <!-- Lightbox Modal Structure -->
+    <div
+      id="lightbox-modal"
+      class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[110] hidden items-center justify-center p-4"
+    >
+      <!-- Close Button -->
+      <button
+        id="lightbox-close"
+        class="absolute top-4 right-4 text-white/70 hover:text-white transition-colors z-20"
+      >
+        <svg
+          class="w-10 h-10"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+
+      <!-- Prev Button -->
+      <button
+        id="lightbox-prev"
+        class="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors z-20 p-2"
+      >
+        <svg
+          class="w-10 h-10"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+      </button>
+
+      <!-- Next Button -->
+      <button
+        id="lightbox-next"
+        class="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors z-20 p-2"
+      >
+        <svg
+          class="w-10 h-10"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </button>
+
+      <!-- Image Container -->
+      <div class="relative w-full h-full flex items-center justify-center">
+        <img
+          id="lightbox-image"
+          src=""
+          alt="Enlarged car view"
+          class="max-w-[90vw] max-h-[90vh] object-contain rounded-lg"
+        />
+      </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="./assets/js/script.js"></script>
   </body>

@@ -523,4 +523,93 @@ document.addEventListener("DOMContentLoaded", function () {
       updateCarouselState();
     }
   }
+
+  // =================================================================
+  // SCRIPT: IMAGE GALLERY V2 (with Lightbox Modal)
+  // =================================================================
+  const galleryV2 = document.getElementById("gallery-v2");
+  if (galleryV2) {
+    // --- Your gallery images go here ---
+    const galleryImages = [
+      "https://images.pexels.com/photos/15942431/pexels-photo-15942431/free-photo-of-a-silver-bentley-parked-in-the-desert.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/1402790/pexels-photo-1402790.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/3764923/pexels-photo-3764923.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/17096537/pexels-photo-17096537/free-photo-of-bugatti-mistral-in-the-desert.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      // Add as many image URLs as you like
+    ];
+
+    const thumbnailGrid = document.getElementById("thumbnail-grid");
+    const lightboxModal = document.getElementById("lightbox-modal");
+    const lightboxImage = document.getElementById("lightbox-image");
+    const lightboxCloseBtn = document.getElementById("lightbox-close");
+    const lightboxPrevBtn = document.getElementById("lightbox-prev");
+    const lightboxNextBtn = document.getElementById("lightbox-next");
+
+    let currentIndex = 0;
+
+    // 1. Populate the thumbnail grid
+    galleryImages.forEach((src, index) => {
+      const thumbContainer = document.createElement("button");
+      thumbContainer.className =
+        "group block rounded-3xl overflow-hidden cursor-pointer focus:outline-none focus:ring-4 focus:ring-brand-gold/50";
+      thumbContainer.dataset.index = index;
+
+      thumbContainer.innerHTML = `
+            <img src="${src}" alt="Car gallery image ${
+        index + 1
+      }" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+        `;
+      thumbnailGrid.appendChild(thumbContainer);
+
+      // 2. Add click listener to open the lightbox
+      thumbContainer.addEventListener("click", () => {
+        currentIndex = index;
+        updateLightboxImage();
+        lightboxModal.classList.remove("hidden");
+        lightboxModal.classList.add("flex");
+        document.body.style.overflow = "hidden";
+      });
+    });
+
+    function updateLightboxImage() {
+      lightboxImage.src = galleryImages[currentIndex];
+    }
+
+    function showNextImage() {
+      currentIndex = (currentIndex + 1) % galleryImages.length; // Loop to the start
+      updateLightboxImage();
+    }
+
+    function showPrevImage() {
+      currentIndex =
+        (currentIndex - 1 + galleryImages.length) % galleryImages.length; // Loop to the end
+      updateLightboxImage();
+    }
+
+    function closeLightbox() {
+      lightboxModal.classList.add("hidden");
+      lightboxModal.classList.remove("flex");
+      document.body.style.overflow = "";
+    }
+
+    // 3. Add event listeners for modal controls
+    lightboxNextBtn.addEventListener("click", showNextImage);
+    lightboxPrevBtn.addEventListener("click", showPrevImage);
+    lightboxCloseBtn.addEventListener("click", closeLightbox);
+    lightboxModal.addEventListener("click", (e) => {
+      // Close modal if the backdrop (not the image or buttons) is clicked
+      if (e.target === lightboxModal) {
+        closeLightbox();
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener("keydown", (e) => {
+      if (!lightboxModal.classList.contains("hidden")) {
+        if (e.key === "ArrowRight") showNextImage();
+        if (e.key === "ArrowLeft") showPrevImage();
+        if (e.key === "Escape") closeLightbox();
+      }
+    });
+  }
 });
