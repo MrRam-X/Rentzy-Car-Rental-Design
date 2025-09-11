@@ -612,4 +612,75 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+  // =================================================================
+  // SCRIPT: ACCORDION FOR RENTAL CONDITIONS
+  // =================================================================
+  const accordionContainer = document.getElementById("accordion-container");
+  if (accordionContainer) {
+    const accordionHeaders =
+      accordionContainer.querySelectorAll(".accordion-header");
+
+    // Function to close all items
+    const closeAllItems = () => {
+      accordionHeaders.forEach((header) => {
+        const content = header.nextElementSibling;
+        const icon = header.querySelector(".accordion-icon");
+
+        // Style as inactive
+        header.classList.remove("bg-brand-gold", "text-black");
+        header.classList.add("bg-gray-100");
+        header
+          .querySelector("span:first-child")
+          .classList.add("text-brand-dark");
+        header
+          .querySelector("span:first-child span")
+          .classList.add("text-brand-gold");
+        header
+          .querySelector("span:first-child span")
+          .classList.remove("text-black/50");
+        icon.classList.add("-rotate-90", "text-brand-gold");
+
+        // Collapse content
+        content.style.maxHeight = null;
+      });
+    };
+
+    accordionHeaders.forEach((header) => {
+      // Set initial state for the first active item
+      // if (header.classList.contains("bg-brand-gold")) {
+      //   const content = header.nextElementSibling;
+      //   content.style.maxHeight = content.scrollHeight + "px";
+      // }
+
+      header.addEventListener("click", () => {
+        const item = header.parentElement;
+        const content = header.nextElementSibling;
+        const icon = header.querySelector(".accordion-icon");
+        const isCurrentlyOpen = content.style.maxHeight;
+
+        // First, close all other items
+        closeAllItems();
+
+        // If the clicked item was NOT already open, then open it
+        if (!isCurrentlyOpen) {
+          // Style as active
+          header.classList.add("bg-brand-gold", "text-black");
+          header.classList.remove("bg-gray-100");
+          header
+            .querySelector("span:first-child")
+            .classList.remove("text-brand-dark");
+          header
+            .querySelector("span:first-child span")
+            .classList.remove("text-brand-gold");
+          header
+            .querySelector("span:first-child span")
+            .classList.add("text-black/50");
+          icon.classList.remove("-rotate-90", "text-brand-gold");
+
+          // Expand content
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    });
+  }
 });

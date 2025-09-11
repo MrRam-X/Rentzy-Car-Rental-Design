@@ -511,9 +511,8 @@
       <!-- =================================================================
       REDESIGNED SECTION: IMAGE GALLERY V2 (with Lightbox Modal)
       ================================================================= -->
-      <section id="gallery-v2" class="pb-16 sm:pb-24">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-
+      <section id="gallery-v2" class="pb-10">
+        <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12 lg:mt-12">
             <p class="text-brand-gold tracking-[0.3em] uppercase text-sm mb-2">
               View Car's
@@ -528,6 +527,205 @@
             class="grid grid-cols-1 lg:grid-cols-3 gap-6"
           >
             <!-- Thumbnails will be populated here by JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================
+      SECTION: RENTAL CONDITIONS ACCORDION
+      ================================================================= -->
+      <section id="rental-conditions" class="py-10">
+        <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl sm:text-4xl font-bold text-brand-dark mb-8">
+            Rental Conditions
+          </h2>
+
+          <div id="accordion-container" class="space-y-4">
+            <!-- Accordion Item 1 (Active by default) -->
+            <div class="accordion-item">
+              <button
+                class="accordion-header flex justify-between items-center w-full p-6 rounded-t-2xl text-left bg-gray-100 transition-colors duration-300"
+              >
+                <span class="font-bold text-lg">
+                  <span class="text-brand-gold mr-2">1.</span> Contract and
+                  Annexes
+                </span>
+                <svg
+                  class="accordion-icon w-6 h-6 transform -rotate-90 text-brand-gold transition-transform duration-300"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                class="accordion-content overflow-hidden max-h-0 transition-max-height duration-500 ease-in-out"
+              >
+                <div
+                  class="bg-gray-100 rounded-b-2xl p-6 -mt-2 text-gray-600 leading-relaxed"
+                >
+                  In addition to the car rental contract to be signed at the
+                  time of delivery, a credit card is required from our
+                  individual customers. We request our commercial customers to
+                  submit their company documents (tax plate, signature slip, ID
+                  photocopy).
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion Item 2 -->
+            <div class="accordion-item">
+              <button
+                class="accordion-header flex justify-between items-center w-full p-6 rounded-t-2xl text-left bg-gray-100 transition-colors duration-300"
+              >
+                <span class="font-bold text-lg text-brand-dark">
+                  <span class="text-brand-gold mr-2">2.</span> Driving License
+                  and Age
+                </span>
+                <svg
+                  class="accordion-icon w-6 h-6 transform -rotate-90 text-brand-gold transition-transform duration-300"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                class="accordion-content overflow-hidden max-h-0 transition-max-height duration-500 ease-in-out"
+              >
+                <div
+                  class="bg-gray-100 rounded-b-2xl p-6 -mt-2 text-gray-600 leading-relaxed"
+                >
+                  Information about driving license and age requirements goes
+                  here. All drivers must have a valid license held for at least
+                  one year. Minimum age is typically 25.
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion Item 3 -->
+            <div class="accordion-item">
+              <button
+                class="accordion-header flex justify-between items-center w-full p-6 rounded-t-2xl text-left bg-gray-100 transition-colors duration-300"
+              >
+                <span class="font-bold text-lg text-brand-dark">
+                  <span class="text-brand-gold mr-2">3.</span> Prices
+                </span>
+                <svg
+                  class="accordion-icon w-6 h-6 transform -rotate-90 text-brand-gold transition-transform duration-300"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                class="accordion-content overflow-hidden max-h-0 transition-max-height duration-500 ease-in-out"
+              >
+                <div
+                  class="bg-gray-100 rounded-b-2xl p-6 -mt-2 text-gray-600 leading-relaxed"
+                >
+                  Details about pricing, what is included (e.g., insurance,
+                  mileage), and what is not included (e.g., fuel, tolls) will be
+                  listed here.
+                </div>
+              </div>
+            </div>
+
+            <!-- Add more items (4. Payments, 5. Delivery, etc.) following the same structure -->
+
+            <!-- Accordion Item 4 -->
+            <div class="accordion-item">
+              <button
+                class="accordion-header flex justify-between items-center w-full p-6 rounded-t-2xl text-left bg-gray-100 transition-colors duration-300"
+              >
+                <span class="font-bold text-lg text-brand-dark">
+                  <span class="text-brand-gold mr-2">4.</span> Payments
+                </span>
+                <svg
+                  class="accordion-icon w-6 h-6 transform -rotate-90 text-brand-gold transition-transform duration-300"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                class="accordion-content overflow-hidden max-h-0 transition-max-height duration-500 ease-in-out"
+              >
+                <div
+                  class="bg-gray-100 rounded-b-2xl p-6 -mt-2 text-gray-600 leading-relaxed"
+                >
+                  Details about pricing, what is included (e.g., insurance,
+                  mileage), and what is not included (e.g., fuel, tolls) will be
+                  listed here.
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion Item 5 -->
+            <div class="accordion-item">
+              <button
+                class="accordion-header flex justify-between items-center w-full p-6 rounded-t-2xl text-left bg-gray-100 transition-colors duration-300"
+              >
+                <span class="font-bold text-lg text-brand-dark">
+                  <span class="text-brand-gold mr-2">5.</span> Delivery
+                </span>
+                <svg
+                  class="accordion-icon w-6 h-6 transform -rotate-90 text-brand-gold transition-transform duration-300"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                class="accordion-content overflow-hidden max-h-0 transition-max-height duration-500 ease-in-out"
+              >
+                <div
+                  class="bg-gray-100 rounded-b-2xl p-6 -mt-2 text-gray-600 leading-relaxed"
+                >
+                  Details about pricing, what is included (e.g., insurance,
+                  mileage), and what is not included (e.g., fuel, tolls) will be
+                  listed here.
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
