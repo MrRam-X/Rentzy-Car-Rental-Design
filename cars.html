@@ -12,11 +12,18 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <script>
       tailwind.config = {
         theme: {
           extend: {
-            fontFamily: { poppins: ["Poppins", "sans-serif"] },
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+              outfit: ["Outfit", "sans-serif"],
+            },
             colors: {
               "brand-gold": "#f5b754",
               "brand-dark": "#121212",
@@ -28,7 +35,7 @@
     </script>
     <style>
       body {
-        font-family: "Poppins", sans-serif;
+        font-family: "Outfit", sans-serif;
       }
       .header-scrolled {
         background-color: white;
@@ -205,7 +212,7 @@
 
       <!-- MAIN CONTENT: FILTERS & CAR GRID -->
       <!-- MODIFICATION: Reduced top padding from py-32 to py-24 for better flow -->
-      <section class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 max-w-7xl">
+      <section class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 max-w-8xl">
         <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-8">
           <!-- FILTERS: Sidebar for Desktop, Drawer for Mobile/Tablet -->
           <aside
@@ -366,9 +373,7 @@
             <div
               class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4"
             >
-              <p class="text-lg text-brand-dark">
-                Showing 1-6 of 24 Cars
-              </p>
+              <p class="text-lg text-brand-dark">Showing 1-6 of 24 Cars</p>
               <!-- Filter Tags (Desktop) -->
               <div class="hidden md:flex items-center gap-2 flex-wrap">
                 <span class="bg-brand-gold text-sm rounded-full py-3 px-5"
@@ -378,11 +383,7 @@
                 <span class="bg-brand-gold text-sm rounded-full py-3 px-5"
                   >Type: SUV <button class="ml-1 font-bold">x</button></span
                 >
-                <a
-                  href="#"
-                  class="text-sm hover:underline"
-                  >Clear All</a
-                >
+                <a href="#" class="text-sm hover:underline">Clear All</a>
               </div>
               <!-- Filter Drawer Button (Mobile/Tablet) -->
               <button

@@ -15,6 +15,10 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
 
     <script>
       // Custom configuration for Tailwind CSS to match the design
@@ -23,6 +27,7 @@
           extend: {
             fontFamily: {
               poppins: ["Poppins", "sans-serif"],
+              outfit: ["Outfit", "sans-serif"],
             },
             colors: {
               "brand-gold": "#f5b754",
@@ -38,7 +43,7 @@
     </script>
     <style>
       body {
-        font-family: "Poppins", sans-serif;
+        font-family: "Outfit", sans-serif;
       }
 
       /* Custom styles for the header transition */
@@ -80,7 +85,9 @@
 
           <!-- Desktop Navigation -->
           <nav class="hidden lg:flex items-center space-x-8">
-            <a href="index.html" class="text-brand-gold font-semibold nav-link">Home</a>
+            <a href="index.html" class="text-brand-gold font-semibold nav-link"
+              >Home</a
+            >
             <a
               href="about.html"
               class="text-white hover:text-brand-gold transition-colors nav-link duration-300"
@@ -180,10 +187,18 @@
         class="flex flex-col items-center justify-center h-full -mt-20 space-y-6 text-2xl text-white"
       >
         <a href="index.html" class="text-brand-gold font-semibold">Home</a>
-        <a href="about.html" class="hover:text-brand-gold transition-colors">About</a>
-        <a href="services.html" class="hover:text-brand-gold transition-colors">Services</a>
-        <a href="cars.html" class="hover:text-brand-gold transition-colors">Cars</a>
-        <a href="contact.html" class="hover:text-brand-gold transition-colors">Contact</a>
+        <a href="about.html" class="hover:text-brand-gold transition-colors"
+          >About</a
+        >
+        <a href="services.html" class="hover:text-brand-gold transition-colors"
+          >Services</a
+        >
+        <a href="cars.html" class="hover:text-brand-gold transition-colors"
+          >Cars</a
+        >
+        <a href="contact.html" class="hover:text-brand-gold transition-colors"
+          >Contact</a
+        >
       </nav>
     </div>
 
@@ -966,9 +981,7 @@
           </div>
 
           <!-- Process Grid -->
-          <div
-            class="grid grid-cols-1 lg:grid-cols-3 gap-16 md:gap-8"
-          >
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 md:gap-8">
             <!-- Step 1 Card -->
             <div class="relative pt-10">
               <!-- MODIFICATION: Increased padding from p-8 to p-12 -->
@@ -1136,7 +1149,9 @@
     <footer id="footer" class="bg-brand-dark text-gray-400">
       <div class="container pt-24 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <!-- Top Contact Bar -->
-        <div class="py-10 md:px-6 lg:px-10 border rounded-3xl md:mx-20 lg:mx-0 border-gray-900">
+        <div
+          class="py-10 md:px-6 lg:px-10 border rounded-3xl md:mx-20 lg:mx-0 border-gray-900"
+        >
           <div
             class="grid grid-cols-1 lg:grid-cols-3 gap-8 text-center md:text-left"
           >
