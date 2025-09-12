@@ -68,6 +68,23 @@
   </head>
 
   <body class="bg-white">
+    <!-- =================================================================
+    COMPONENT: SPINNER WITH BACKDROP OVERLAY
+    
+    (hide = remove "flex" class and add "hidden" class to spinner-overlay)
+    (show = add "flex" class and remove "hidden" class to spinner-overlay)
+
+    Note:- we need to add "overflow-hidden" class inside body tag to restrict the scroll behavior
+    ================================================================= -->
+    <div
+      id="spinner-overlay"
+      class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[200] hidden items-center justify-center"
+    >
+      <!-- The Spinner -->
+      <div
+        class="w-16 h-16 border-2 border-white/20 border-t-brand-gold rounded-full animate-spin"
+      ></div>
+    </div>
     <!-- HEADER -->
     <header
       id="header"
