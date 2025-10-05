@@ -63,3 +63,7 @@
   font-weight: bold;
   font-size: 0.8rem;
 }
+/* Iframe map color gray */
+.grayscale {
+  filter: grayscale(1);
+}
