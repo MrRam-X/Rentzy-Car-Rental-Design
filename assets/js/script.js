@@ -750,4 +750,48 @@ document.addEventListener("DOMContentLoaded", function () {
   //     removeToast();
   //   });
   // }
+
+  // =================================================================
+  // SCRIPT: BOOKING MODAL
+  // =================================================================
+  const openModalBtn = document.getElementById("open-booking-modal");
+  const closeModalBtn = document.getElementById("close-booking-modal");
+  const cancelModalBtn = document.getElementById("cancel-booking-btn");
+  const bookingModal = document.getElementById("booking-modal");
+  const modalContent = document.getElementById("booking-modal-content");
+
+  if (bookingModal) {
+    const showModal = () => {
+      bookingModal.classList.remove("hidden");
+      bookingModal.classList.add("flex");
+      setTimeout(() => {
+        // Allows for transition
+        bookingModal.classList.add("opacity-100");
+        modalContent.classList.remove("scale-95");
+      }, 10);
+      document.body.style.overflow = "hidden";
+    };
+
+    const hideModal = () => {
+      bookingModal.classList.remove("opacity-100");
+      modalContent.classList.add("scale-95");
+      setTimeout(() => {
+        // Waits for transition
+        bookingModal.classList.add("hidden");
+        bookingModal.classList.remove("flex");
+      }, 300);
+      document.body.style.overflow = "";
+    };
+
+    openModalBtn.addEventListener("click", showModal);
+    closeModalBtn.addEventListener("click", hideModal);
+    cancelModalBtn.addEventListener("click", hideModal);
+
+    // Close modal if backdrop is clicked
+    bookingModal.addEventListener("click", (e) => {
+      if (e.target === bookingModal) {
+        hideModal();
+      }
+    });
+  }
 });
